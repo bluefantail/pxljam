@@ -200,7 +200,6 @@ DEPENDENCIES
   capistrano-passenger
   capistrano-rails
   capistrano-rbenv
-  coffee-rails (~> 4.1.0)
   devise
   highline
   jbuilder (~> 2.0)
