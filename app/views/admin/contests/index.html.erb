@@ -1,0 +1,20 @@
+<h1>Contests</h1>
+
+<%= link_to "Start timer", new_admin_contest_path %>
+
+<table>
+  <tr>
+    <th>Started at</th>
+    <th>Actions</th>
+  </tr>
+  
+  <% @contests.each do |c| %>
+    <tr>
+      <td><%= c.created_at %></td>
+      <td>
+        <%= link_to "Show timer", admin_contest_path(c) %>
+        <%= link_to "Delete", admin_contest_path(c), method: :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>

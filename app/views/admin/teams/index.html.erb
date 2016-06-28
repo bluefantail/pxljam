@@ -1,0 +1,25 @@
+Omg! <%= @teams.count %> teams and <%= Player.all.count %> players already! <%= link_to "Show all players", admin_teams_all_path %>
+
+<table>
+  <tr>
+    <th>Team name</th>
+    <th>Number of players</th>
+    <th colspan>Actions</th>
+  <tr />
+  
+  <% @teams.each do |team| %>
+    <tr>
+      <td><%= link_to team.name, admin_team_url(team) %></td>
+      <td><%= team.players.count %></td>
+      <td>
+        <%= link_to "Delete", admin_team_url(team), method: :delete %>
+        
+        <% if !team.verified %>
+         | <%= link_to "Verify", admin_team_verify_url(team), method: :post %>
+        <% else %>
+         | (verified)
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
