@@ -23,4 +23,6 @@ set :slack_webhook, 'https://hooks.slack.com/services/T0484SKMV/B1LQYLW4A/IN32iX
 set :slack_team, "golden-eagle"
 set :slack_channel, '#pxljm'
 
+set :ssh_options, {forward_agent: true}
+
 after 'deploy:publishing', 'deploy:restart'
