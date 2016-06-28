@@ -13,6 +13,8 @@ set :tmp_dir, "/tmp/#{`whoami`.split('\\').first.chomp}"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/apps/pxljam'
 
+set :pty, false
+
 # Default value for :linked_files is []
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
