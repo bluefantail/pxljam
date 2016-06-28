@@ -12,7 +12,7 @@
 
 
   <title>Pxljam</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 
   <meta name="description" content="Pxljam is a 48-hour game making competition with some very unique rules.">
@@ -29,6 +29,6 @@
 </head>
 <body>
 <%= yield %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application' %>
 </body>
 </html>

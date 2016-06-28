@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require smooth-scroll.min
 //= require gumshoe.min
 //= require_tree .
