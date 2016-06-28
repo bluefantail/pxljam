@@ -158,7 +158,7 @@ input[type=submit]{
 
 // Site
 header{
-	background: $primary-dark;
+	background: asset-url("ground.png") repeat-x bottom $primary-dark;
 	box-sizing: border-box;
 	position: absolute;
 	height: 100%;
@@ -446,8 +446,7 @@ section{
 	}
 }
 section#about{
-	background: image-url('bg.svg') no-repeat  center center #000;
-	background-size: 300%;
+	background: image-url('earth.png') #000;
 	color: #eee;
 	p.feature{
 		color: $grey;
@@ -497,7 +496,7 @@ section#about{
 	}
 }
 section#enter{
-	background: #fff;
+	background: image-url("deep.png") repeat-x bottom #fff;
 	#entry-confirmation{
 		padding: 6rem 0 6rem 0;
 		float: left;
@@ -510,7 +509,7 @@ section#enter{
 	}
 }
 section#faq{
-	background: #000;
+	background: image-url("rock.png") #000;
 	color: #eee;
 	$spacing: 4rem;
 	#questions{
