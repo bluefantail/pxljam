@@ -1,0 +1,50 @@
+<% if @contest_running %>
+  <h1>Hold fire!</h1>
+  <p>Signups are closed at the moment, check back again closer to the next competition.</p>
+<% else %>
+  <h1>Enter a team</h1>
+  <p>Signups are open. $10 per team member ($5 for VEC members)</p>
+  <p>
+    
+  </p>
+
+  <p>Please ensure you provide a correct email address for each member as we may send you resources needed for voting during the competition.</p>
+
+  <%= form_tag teams_url, id: "entry-form", method: :post do |f| %>
+
+    <%= text_field_tag :name, nil, placeholder: "Team name", id: "team-name", required: true %>
+    <div id="name-error" class="error">That team name is taken sorry!</div>
+    <div id="players">
+      <div id="players-title"><div>Players</div></div>
+      <div id="player-select">
+        <input type="radio" id="player-1" name="player-count" value="1">
+        <input type="radio" id="player-2" name="player-count" value="2">
+        <input type="radio" id="player-3" name="player-count" value="3">
+        <input type="radio" id="player-4" name="player-count" value="4">
+        <input type="radio" id="player-5" name="player-count" value="5">
+        <label for="player-1" id="1"><div>1</div></label>
+        <label for="player-2" id="2"><div>2</div></label>
+        <label for="player-3" id="3"><div>3</div></label>
+        <label for="player-4" id="4"><div>4</div></label>
+        <label for="player-5" id="5"><div>5</div></label>
+      </div>
+    </div>
+    
+    <div id="team-message"></div>
+   
+    <div id="player-fields">
+      <div id="player-email-default" class="" style="display: none;">
+        <div id="error" class="error">This email is already registered to another team</div>
+        <input type="text" name="name"/>
+        <input type="email" name="email" placeholder="Email"/>
+        <div class="VEC-title"><div>VEC</div></div>
+        <input type="checkbox" name="vec" />
+        <label for="vec" class="icon-ok"></label>
+      </div>
+    </div>
+
+    <div id="entry-errors"></div>
+    
+    <%= submit_tag "Enter", id: "team-submit", disabled: true %>
+  <% end %>
+<% end %>

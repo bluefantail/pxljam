@@ -1,0 +1,1012 @@
+// Place all the styles related to the page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Colours
+$primary-dark: #001010;
+$primary-dim: lighten($primary-dark, 14%);
+$primary-bright: #F6A200;
+$grey: #9a9a9a;
+
+// Maximum site width
+$site-width: 1200px;
+$small-padding: 4rem;
+$column-break: 850px;
+$nav-gap: 5%;
+
+@mixin animate($duration: 0.2s){
+	// Animates all properties of an object
+	-webkit-transition:
+		all $duration ease-in-out;
+	-moz-transition:
+		all $duration ease-in-out;
+	-o-transition:
+		all $duration ease-in-out;
+	transition:
+		all $duration ease-in-out;
+}
+@mixin calculate_tile($count: 1, $padding: 1%) {
+	$marginCount: $count - 1;
+	$totalMargin: $marginCount*$padding;
+	$tilewidth: ((100 - $totalMargin)/$count); /* Width of tiles */
+	width: $tilewidth;
+	margin-right: $padding;
+	margin-bottom: $padding;
+	&:nth-of-type(#{$count}){
+		margin-right: 0;
+	}
+}
+.table{
+	display: table;
+	height: 100%;
+	padding: 0 !important;
+}
+.vert-align{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+@font-face {
+  font-family: 'icons';
+  src: asset-url('icons.eot?48017544');
+  src: asset-url('icons.eot?48017544#iefix') format('embedded-opentype'),
+       asset-url('icons.woff?48017544') format('woff'),
+       asset-url('icons.ttf?48017544') format('truetype'),
+       asset-url('icons.svg?48017544#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Defaults
+html,body{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+body,
+form,
+input,
+textarea{
+	font-family: 'Roboto', sans-serif;
+}
+h1{
+	font-family: 'PT Serif', serif;
+	font-family: 'Ceviche One', cursive;
+	color: $primary-bright;
+	font-weight: 400;
+	font-size: 5rem;
+	letter-spacing: 0.1rem;
+	margin: 1.8rem 0 1.8rem 0;
+}
+p{
+	text-align: justify;
+	line-height: 160%;
+	font-size: 1.4rem;
+	font-weight: 300;
+}
+p.feature{
+	font-size: 2.2rem;
+	padding: 0 0 2rem 0;
+	margin: 0;
+}
+button{
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+a{
+	text-decoration: none;
+	outline: none;
+	@include animate;
+		color: lighten($primary-bright, 20%);
+	&:hover{
+		color: lighten($primary-bright, 35%);
+	}
+}
+input,
+textarea{
+	border: none;
+	outline: none;
+}
+code {
+    background:	#111;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: $primary-bright;
+    font-size: 1.1rem;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    margin: 0 0.3rem 0 0.3rem;
+}
+a.button,
+button,
+input[type=submit]{
+	font-size: 1.4rem;
+	background: $primary-bright;
+	color: lighten($primary-bright, 30%);
+	box-shadow: 0px 2px 8px #000;
+	padding: 1.3rem 2.6rem 1.3rem 2.6rem;
+	@include animate;
+	&:hover{
+		background: lighten($primary-bright, 20%);
+		color: #fff;
+	}
+}
+@media(max-width: 1000px){
+	html,
+	body{
+		font-size: 85%;
+	}
+}
+@media(max-width: $column-break){
+	html,
+	body{
+		font-size: 80%;
+	}
+	h1{
+		font-size: 4rem;
+	}
+	p.feature{
+		font-size: 1.5rem;
+	}
+}
+@media(max-width: 600px){
+	html,
+	body{
+		font-size: 76%;
+	}
+}
+
+// Site
+header{
+	background: $primary-dark;
+	box-sizing: border-box;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	color: #fff;
+	overflow-x: hidden;
+}
+.container{
+	box-sizing: border-box;
+	max-width: 1200px;
+	margin: 0px auto;
+	min-height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	position: relative;
+	@include animate;
+}
+@media(max-width: 1550px){
+	#splash,
+	.container{
+		padding-left: $nav-gap; // leave space for nav
+	}
+}
+@media(max-width: 1400px){
+	#splash,
+	.container{
+		padding-left: $nav-gap*2;
+	}
+}
+@media(max-width: 1300px){
+	#splash,
+	.container{
+		padding: 0 $small-padding 0 $nav-gap*3;
+	}
+}
+@media(max-width: 1200px){
+	#splash,
+	.container{
+		padding: 0 $small-padding 0 $small-padding;
+	}
+}
+@media(max-width: 450px){
+	#splash,
+	.container{
+		padding: 0 $small-padding/2 0 $small-padding/2;
+	}
+}
+@media(max-width: $column-break){
+	header{
+		height: auto;
+		position: relative;
+		padding: 5rem 0 8rem 0;
+	}
+}
+#splash-container{
+	text-align: center;
+	#splash{
+		width: 100%;
+		float: left;
+		margin: 0px auto;
+		margin-bottom: 7rem;
+		box-sizing: border-box;
+		@include animate;
+		#splash-text{
+			text-align: center;
+			float: left;
+			@include animate;
+			#splash-title{
+				font-size: 13rem;
+				width: 100%;
+				float: left;
+				font-weight: 900;
+				font-family: 'Ceviche One', cursive;
+				letter-spacing: 2px;
+				@include animate;
+			}
+			#splash-info{
+				float: left;
+				width: 100%;
+				text-align: inherit;
+				color: $primary-dim;
+				box-sizing: border-box;
+				// padding: 0 0 0 1.5rem;
+				@include animate;
+				p{
+					text-align: inherit;
+					margin: 1rem 0 1rem 0;
+					font-size: 1.8rem;
+					font-weight: 400;
+					width: 100%;
+					@include animate;
+				}
+				a{
+					margin-top: 2rem;
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+#logo{
+	background: image-url('logo.png') no-repeat center center;
+	box-sizing: border-box;
+	background-size: contain;
+	padding-bottom: 35%;
+	float: left;
+	width: 100%;
+	@include animate;
+}
+$signup-status-width: 800px;
+#signup-status{
+	$space: 0.3; // Distance from corner, 0 - 1
+	width: $signup-status-width;
+	top: ($signup-status-width/2)*$space;
+	right: -(($signup-status-width/2)*($space*((1/$space)-1)));
+	position: absolute;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 1rem 0 1rem 0;
+	text-indent: -2rem;
+	font-size: 1.3rem;
+	border: 2px solid darken($primary-dim, 10%);
+	box-shadow:  0px 1px 10px #000;
+	text-shadow: 0px 0px 4px $primary-dark;
+	background: $primary-dim;
+	color: lighten($primary-dim, 50%);
+	transform: rotate(45deg) translate(0px, 0px);
+	@include animate;
+}
+@media(max-width: 1400px){
+	#signup-status{	
+		$space: 0.18;
+		width: $signup-status-width;
+		top: ($signup-status-width/2)*$space;
+		right: -(($signup-status-width/2)*($space*((1/$space)-1)));
+	}
+}
+@media(max-width: 1000px){
+	#signup-status{	
+		$space: 0.14;
+		width: $signup-status-width;
+		top: ($signup-status-width/2)*$space;
+		right: -(($signup-status-width/2)*($space*((1/$space)-1)));
+	}
+}
+@media(max-width: 750px){
+	#signup-status{	
+		$space: 0.12;
+		font-size: 1.1rem;
+		width: $signup-status-width;
+		top: ($signup-status-width/2)*$space;
+		right: -(($signup-status-width/2)*($space*((1/$space)-1)));
+	}
+}
+@media(max-width: 500px){
+	#signup-status{	
+		$space: 0.09;
+		font-size: 0.9rem;
+		width: $signup-status-width;
+		top: ($signup-status-width/2)*$space;
+		right: -(($signup-status-width/2)*($space*((1/$space)-1)));
+	}
+}
+@media(max-width: 1200px){
+	#splash-container{
+		#splash{
+			#splash-text{
+				#splash-title{
+					font-size: 11rem
+				}
+				#splash-info{
+					p{
+						font-size: 1.7rem;
+					}
+				}
+			}
+		}
+	}
+}
+@media(max-width: 1000px){
+	#splash-container{
+		#splash{
+			#splash-text{
+				#splash-title{
+					font-size: 10rem
+				}
+				#splash-info{
+					p{
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+	}
+}
+@media(max-width: $column-break){
+	#splash-container{
+		#splash{
+			margin-bottom: 3rem;
+			#splash-text{
+				text-align: center;
+				#splash-info{
+					padding: 0;
+					p{
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+	#logo{
+		padding-bottom: 45%;
+		margin-bottom: 2rem;
+	}
+}
+@media(max-width: 500px){
+	#logo{
+		padding-bottom: 65%;
+	}
+}
+@media(max-width: 350px){
+	#splash-title{
+		font-size: 8rem !important;
+	}
+}
+
+nav{
+	padding: 0 0 0 3rem;
+	position: fixed;
+	display: table;
+	height: 100%;
+	z-index: 7;
+	@include animate;
+	ul{
+		display: table-cell;
+		vertical-align: middle;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li{
+			float: left;
+			clear: both;
+			a{
+				color: darken($primary-bright, 10%);
+				font-size: 1.1rem;
+				padding: 0.5rem 1rem 0.5rem 1rem;
+				margin: 0 0 1rem 0;
+				float: left;
+				@include animate;
+			}
+			a.active,
+			a:hover{
+				background: $primary-dark;
+				color: lighten($primary-bright, 30%);
+			}
+		}
+	}
+}
+@media(max-width: 1200px){
+	nav{
+		margin-left: -150px;
+	}
+}
+
+#sections{
+	position: absolute;
+	width: 100%;
+	top: 100%;
+}
+@media(max-width: $column-break){
+	#sections{
+		position: relative;
+	}
+}
+section{
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	float: left;
+	padding: 2rem 0 10rem 0;
+}
+@media(max-width: 1000px){
+	section{
+		padding: 1rem 0 2rem 0;
+	}
+}
+section#about{
+	background: image-url('bg.svg') no-repeat  center center #000;
+	background-size: 300%;
+	color: #eee;
+	p.feature{
+		color: $grey;
+	}
+	ul{
+		$spacing: 4rem;
+		list-style: none;
+		margin: 0;
+		padding: 0 0 0 $spacing;
+		box-sizing: border-box;
+		margin-bottom: $spacing;
+		color: $grey;
+		position: relative;
+		li{
+			font-size: 1.6rem;
+			font-weight: 300;
+			line-height: 150%;
+			margin: 0 0 $spacing*.3;
+			&:before{
+				content: "";
+				width: 1rem;
+				height: 1rem;
+				background: $primary-bright;
+				float: left;
+				position: absolute;
+				line-height: 150%;
+				left: 1rem;
+				margin-top: 0.7rem;
+				border-radius: 1px;
+			}
+		}
+	}
+}
+@media(max-width: 1000px){
+	section#about{
+		background-size: 400%;
+	}
+}
+@media(max-width: 750px){
+	section#about{
+		background-size: 500%;
+	}
+}
+@media(max-width: 600px){
+	section#about{
+		background-size: 1200%;
+	}
+}
+section#enter{
+	background: #fff;
+	#entry-confirmation{
+		padding: 6rem 0 6rem 0;
+		float: left;
+		clear: both;
+		width: 100%;
+		display: block;
+		font-size: 2rem;
+		font-weight: 300;
+		color: $primary-bright;
+	}
+}
+section#faq{
+	background: #000;
+	color: #eee;
+	$spacing: 4rem;
+	#questions{
+		&>div{
+			position: relative;
+		}
+	}
+	p{
+		padding-left: $spacing;
+		box-sizing: border-box;
+		font-size: 1.2rem;
+		line-height: 150%;
+	}
+	p:before{
+		position: absolute;
+		font-weight: 700;
+		color: #fff;
+		font-size: 1rem;
+		left: 0;
+		padding: 0 0.6rem 0 0.6rem;
+		background: darken($primary-bright, 5%);
+		border-radius: 1px;
+	}
+	p:nth-child(odd) {
+		color: $primary-bright;
+		font-weight: 400;
+		&:before{
+			content: "Q";
+		}
+	}
+	p:nth-child(even) {
+		margin-bottom: $spacing*.7;
+		&:before{
+			content: "A";
+		}
+	}
+
+}
+section#where{
+		#map{
+			float: left;
+			width: 100%;
+			padding-bottom: 66%;
+			background: image-url("map.png") no-repeat;
+			background-size: cover;
+		}
+}
+section#contact{
+	background: #000;
+	$placeholder-blue: lighten($primary-dim, 15%);
+	color: lighten($primary-dim, 15%);
+	input:not([type="submit"]),
+	textarea,{
+		background: $primary-dark;
+		color: $primary-dim;
+		&:focus{
+			background: lighten($primary-dark, 10%);
+			color: #fff;
+		}
+	}
+	input::-webkit-input-placeholder{
+		color: $placeholder-blue;
+	}
+	input::-moz-placeholder{
+		color: $placeholder-blue;
+	}
+	input:-ms-input-placeholder{
+		color: $placeholder-blue;
+	}
+	input:-moz-placeholder{
+		color: $placeholder-blue;
+	}
+	textarea::-webkit-input-placeholder{
+		color: $placeholder-blue;
+	}
+	textarea::-moz-placeholder{
+		color: $placeholder-blue;
+	}
+	textarea:-ms-input-placeholder{
+		color: $placeholder-blue;
+	}
+	textarea:-moz-placeholder{
+		color: $placeholder-blue;
+	}
+	#contact-message{
+		box-sizing: border-box;
+		background-color: #000;
+		position: absolute;
+		text-align: center;
+		font-size: 2.8rem;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		padding: 25% 1rem 0 1rem;
+	}
+	@media(max-width: $column-break){
+		#contact-message{
+			font-size: 2.2rem;
+		}
+	}
+}
+section#sponsors{
+	padding: 3.5rem 0 3.5rem 0;
+	box-sizing: border-box;
+	.container{
+	}
+	.sponsor{
+		width: 85px;
+		height: 35px;
+		box-sizing: border-box;
+		background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+		display: block;
+		margin: 1rem auto 2rem auto;
+	}
+	.large{
+		width: 400px;
+		height: 200px;
+		clear: both;
+	}
+	.vec{
+		background-image: image-url("sponsors/vec-logo.png");
+	}
+	.acidic{
+		background-image: image-url("acidic.svg");
+	}
+
+	a{
+		opacity: 0.7;
+		@include animate;
+		&:hover{
+			opacity: 1;
+		}
+	}
+}
+@media(max-width: 700px){
+	section#sponsors{
+		.large{
+			width: 100%;
+		}
+	}
+}
+[data-tooltip]{
+	position: relative;
+}
+[data-tooltip]:after{
+	content: attr(data-tooltip);
+	position: absolute;
+	right: -110%;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: 1.6rem;
+	background: #555;
+	color: #fff;
+	border-radius: 2px;
+	padding: 0.4rem 1rem 0.4rem 1rem;
+	box-sizing: border-box;
+	display: block;
+	font-size: 0.7rem;
+	white-space: nowrap;
+	opacity: 0;
+	visibility: hidden;
+	@include animate;
+}
+[data-tooltip]:hover:after{
+	opacity: 1;
+	visibility: visible;
+}
+form{
+	$input-spacing: 1.2rem;
+	$input-font-size: 1.2rem;
+	float: left;
+	width: 100%;
+	padding: 0.5rem;
+	box-sizing: border-box;
+	input,
+	textarea{
+		box-sizing: border-box;
+		margin: 0 0 $input-spacing 0;
+		background: #eee;
+		font-weight: 300;
+		font-size: 1.2rem;
+		padding: $input-spacing;
+		width: 100%;
+		@include animate;
+	}
+	textarea{
+		height: 12rem;
+		max-width: 100%;
+	}
+	input[type=submit]{
+		box-shadow: none;
+		cursor: pointer;
+		float: right;
+		clear: both;
+		width: auto;
+		font-weight: 400;
+	}
+	input:disabled,
+	input:disabled:hover{
+		background: $grey;
+		color: lighten($grey, 15%);
+		cursor: normal;
+	}
+	input[type=radio]{
+		display: none;
+	}
+	$players-input-size: 3rem;
+	#players-title{
+		height: $players-input-size;
+		padding: 0 $input-spacing 0 $input-spacing;
+		font-size: $input-font-size*0.9;
+		background: $grey;
+		display: table;
+		float: left;
+		color: #eee;
+		box-sizing: border-box;
+		div{
+			display: table-cell;
+			vertical-align: middle;
+			width: 100%;
+		}
+	}
+	#player-select{
+		$light-grey: #eee;
+		margin: 0 0 $input-spacing 0;
+		float: left;
+		&:hover label{
+			background: $primary-bright;
+			color: #fff;
+		}
+		label.set{
+			background: $primary-bright;
+			color: #fff;
+		}
+		label{
+			background: $light-grey;
+			width: $players-input-size;
+			height: $players-input-size;
+			float: left;
+			text-align: center;
+			display: table;
+			color: $grey;
+			div{
+				width: 100%;
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+		label:hover ~ label{
+			background: $light-grey;
+			color: $grey;
+		}
+	}
+	#player-fields{
+		float: left;
+		width: 100%;
+		padding: 0 0 2rem 0;
+		.player-info{
+			float: left;
+			width: 100%;
+			input{
+				width: 30%;
+				float: left;
+				margin-right: $input-spacing;
+			}
+			input[type=checkbox]{
+				display: none;
+			}
+			label{
+				display: block;
+				font-family: icons;
+				padding: $input-spacing;
+				font-size: $input-font-size;
+				float: left;
+				border: 1px solid #eee;
+				background: #eee;
+				color: #ddd;
+				margin-right: $input-spacing;
+				margin-bottom: $input-spacing;
+			}
+			input[type=checkbox]:checked + label{
+				color: #fff;
+				background: $primary-bright;
+				border: 1px solid $primary-bright;
+			}
+			label:hover{ // These last two are duplicated to avoid js ignoring both on touch devices
+				color: #fff;
+				background: $primary-bright;
+				border: 1px solid $primary-bright;
+			}
+			.food-title,
+			.VEC-title{
+				padding: $input-spacing $input-spacing*1.5 $input-spacing $input-spacing*1.5;
+				margin-bottom: $input-spacing;
+				font-size: $input-font-size;
+				background: $grey;
+				font-weight: 300;
+				display: table;
+				float: left;
+				color: #eee;
+				div{
+					display: table-cell;
+					vertical-align: middle;
+					width: 100%;
+				}
+			}
+		}
+	}
+	#team-message{
+		height: $players-input-size;
+		float: left;
+		padding: 0 0 0 $input-spacing;
+		display: table;
+		div{
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 1.1rem;
+		}
+	}
+	@media(max-width: 1300px){
+		#player-fields{
+			.player-info{
+				input{
+					width: 28%;
+				}
+				.food-title,
+				.VEC-title{
+					padding-left: $input-spacing*1.1;
+					padding-right: $input-spacing*1.1;
+				}
+			}
+		}
+	}
+	@media(max-width: 1000px){
+		#player-fields{
+			.player-info{
+				input{
+					width: 45%;
+				}
+				.food-title{
+					clear: left;
+				}
+				.food-title,
+				.VEC-title{
+					padding-left: $input-spacing*2;
+					padding-right: $input-spacing*2;
+					margin-bototm: $input-spacing;
+				}
+			}
+		}
+	}
+	@media(max-width: 700px){
+		#player-fields{
+			.player-info{
+				input{
+					width: 100%;
+					margin-right: 0;
+				}
+				label{
+					font-size: $input-font-size*0.8;
+				}
+				.food-title,
+				.VEC-title{
+					padding-left: $input-spacing*1;
+					padding-right: $input-spacing*1;
+					font-size: $input-font-size*0.8;
+				}
+			}
+		}
+	}
+	@media(max-width: 350px){
+		#player-fields{
+			.player-info{
+				input{
+				}
+				label{
+					margin-right: 0;
+				}
+				.food-title,
+				.VEC-title{
+				}
+			}
+		}
+	}
+}
+
+// Teams
+
+#teams-entered{
+	float: left;
+	width: 100%;
+	display: block;
+	.team-tile{
+		color: lighten($primary-dark, 85%);
+		background: lighten($primary-dark, 7%);
+		position: relative;
+		border-radius: 3px;
+		float: left;
+		overflow: hidden;
+		font-size: 115%;
+		font-weight: 100;
+		margin: 0 1rem 1rem 0;
+		@include animate;
+		.team-name{
+			float: left;
+			padding: 1rem 3rem 1rem 3rem;
+			text-align: center;
+		}
+		&:hover{
+			background-color: lighten($primary-dark, 15%);
+		}
+	}
+}
+
+// Errors
+.entry-error,
+.error{
+	color: red;
+	float: left;
+}
+.error{
+	display: none;
+}
+
+// Column magic from Skeleton.css
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+/* For devices larger than 550px */
+@media (min-width: $column-break) {
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+}

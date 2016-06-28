@@ -1,0 +1,82 @@
+<header id="home">
+  <div class="container table">
+    <div id="splash-container" class="vert-align">
+      <div id="splash" class="row">
+        <div id="splash-text" class="twelve columns">
+          <!-- <div id="splash-title">Pxljam</div> -->
+          <div id="splash-info">
+            <div id="logo"></div>
+            <p>Victoria University of Wellington</p>
+            <!-- <p>Rooms AM102 and AM104</p> -->
+            <p>2017 Location TBC</p>
+            <!-- <p>6pm Friday 29<sup>th</sup> April - Sunday 1<sup>st</sup> May</p> -->
+            <p>2017 dates TBC</p>
+            <a data-scroll class="button" href ="#enter">Enter Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div id="signup-status">Signups now open!</div> -->
+</header>
+<nav>
+  <ul data-gumshoe>
+    <li><a data-scroll href="#home" class="active">Home</a></li>
+    <li><a data-scroll href="#about">About</a></li>
+    <li><a data-scroll href="#enter">Enter</a></li>
+    <li><a data-scroll href="#faq">FAQ</a></li>
+    <li><a data-scroll href="#where">Where</a></li>
+    <li><a data-scroll href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<div id="sections">
+  <section id="about">
+    <div class="container">
+      <%= render 'about' %>
+    </div>
+  </section>
+
+  <section id="enter">
+    <div class="container">
+      <%= render 'enter' %>
+      <%= render 'teams' %>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <h1>FAQ</h1>
+      <div id="questions" class="row">
+        <%= render 'faq' %>
+      </div>
+    </div>
+  </section>
+  <section id="where">
+    <div class="container">
+      <h1>Where is it?</h1>
+      <p class="feature">
+        Pxljam is hosted in rooms 102 and 104 (opposite the WishBone cafe) of the Alan MacDiarmid building on the Kelburn campus of Victoria University of Wellington.
+      </p>
+      <div class="row">
+        <div class="seven columns">
+            <a id="map" href="/assets/map.png" target="_blank" title="View full image"></a>
+        </div>
+        <div class="five columns">
+          <%= render 'where' %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container">
+      <h1>Got questions?</h1>
+      <%= render 'contact' %>
+    </div>
+  </section>
+  <section id="sponsors">
+    <div class="container">
+      <div class="sponsor large vec"></div>
+      <a href="http://acidic.co.nz" target="_blank" class="sponsor acidic" data-tooltip="Site by Acidic"></a>
+    </div>
+  </section>
+</div>
