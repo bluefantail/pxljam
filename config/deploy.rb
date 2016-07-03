@@ -8,7 +8,7 @@ set :passenger_roles, :app
 
 # Default branch is :master
 set :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-set :tmp_dir, "/tmp/#{`whoami`.split('\\').first.chomp}"
+set :tmp_dir, "/tmp/#{Time.now.to_i}"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/apps/pxljam'
