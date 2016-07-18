@@ -269,10 +269,9 @@ header{
 				float: left;
 				width: 100%;
 				text-align: inherit;
-				text-shadow: 0px 1px 3px #000;
-				color: lighten(blue, 40%);
+				text-shadow: 0px 1px 6px #000;
+				color: #fff;
 				box-sizing: border-box;
-				/*padding: 0 0 0 1.5rem;*/
 				@include animate;
 				p{
 					text-align: inherit;
@@ -968,7 +967,7 @@ form{
   	height: 100%;
 }
 #clouds{
-	height: 55%;
+	height: 60%;
 	bottom: 64px;
 	top: auto;
 	overflow: visible;
