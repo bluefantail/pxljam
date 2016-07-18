@@ -200,10 +200,6 @@ $(function() {
   const conts = $(".art-container");
   const body  = $("body");
 
-  // $(window).resize(function() {
-    // conts.width(body.outerWidth());
-  // }).resize();
-
   function grid(width, height, variation, xGap, yGap, chance, cont, make) {
     const els = [];
 
@@ -277,7 +273,7 @@ $(function() {
   })();
 
   (function() {
-    const sky   = $("#home"); // #sky
+    const sky   = $("#home");
     const fly   = $("#fly");
     const kite  = $("#kite");
     const line  = $("#line");
