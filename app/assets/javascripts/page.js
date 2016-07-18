@@ -290,125 +290,113 @@ $(function() {
     var flyerOffsetY = 40;
     var reeled = false;
 
-    var loaded = false;
-
     function newLinePixel() {
       const pixel = $('<div class="kite-line"></div>');
       line.append(pixel);
       return pixel;
     }
 
-    
+    var width = sky.width() / 8 + Math.random() * 50 - 25;
+        width -= width % 4;
+    var height = sky.height() - kite.height() - Math.random() * 200 - 100;
+        height -= height % 4;
 
-    // $("#fly div").load(function() {
-    //   if (!loaded) {
-    //     return loaded = true;
-    //   }
+    var flyerX = 50 + flyerOffsetX;
+    var kiteX  = width + flyerX + kiteOffsetX;
+    var kiteY  = height + kiteOffsetY;
 
-      var width = sky.width() / 8 + Math.random() * 50 - 25;
-          width -= width % 4;
-      var height = sky.height() - kite.height() - Math.random() * 200 - 100;
-          height -= height % 4;
+    function placeKite() {
+      kite.css('right', kiteX - kiteOffsetX - 2);
+      kite.css('bottom', kiteY - kiteOffsetY + 4);
+    }
 
-      var flyerX = 50 + flyerOffsetX;
-      var kiteX  = width + flyerX + kiteOffsetX;
-      var kiteY  = height + kiteOffsetY;
+    placeKite();
+    flyer.css('right', flyerX - flyerOffsetX + 2);
+    flyer.css('bottom', 0);
 
-      function placeKite() {
-        kite.css('right', kiteX - kiteOffsetX - 2);
-        kite.css('bottom', kiteY - kiteOffsetY + 4);
+    const pixels = [];
+    const pixelCount = 1000;
+    for (var i = pixelCount - 1; i >= 0; i--) {
+      pixels.push(newLinePixel());
+    }
+
+    function alignPixels() {
+      const xdiff = (kiteX - flyerX) / pixelCount;
+      const ydiff = (kiteY - flyerOffsetY) / pixelCount;
+
+      for (var i = 0; i < pixelCount; i++) {
+        var pixel = pixels[i];
+
+        var x = kiteX - i * xdiff;
+        var y = kiteY - i * ydiff;
+        x -= x % 4;
+        y -= y % 4;
+
+        pixel.x = x;
+        pixel.y = y;
+        pixel.css('right', x);
+        pixel.css('bottom', y);
       }
 
-      placeKite();
-      flyer.css('right', flyerX - flyerOffsetX + 2);
-      flyer.css('bottom', 0);
+      var hidden = false;
+      var prev, next;
+      for (var i = 0; i < pixelCount; i++) {
+        var pixel = pixels[i];
 
-      const pixels = [];
-      const pixelCount = 1000;
-      for (var i = pixelCount - 1; i >= 0; i--) {
-        pixels.push(newLinePixel());
-      }
+        if (i < pixelCount - 1) {
+          var next = pixels[i + 1];
 
-      function alignPixels() {
-        const xdiff = (kiteX - flyerX) / pixelCount;
-        const ydiff = (kiteY - flyerOffsetY) / pixelCount;
-
-        for (var i = 0; i < pixelCount; i++) {
-          var pixel = pixels[i];
-
-          var x = kiteX - i * xdiff;
-          var y = kiteY - i * ydiff;
-          x -= x % 4;
-          y -= y % 4;
-
-          pixel.x = x;
-          pixel.y = y;
-          pixel.css('right', x);
-          pixel.css('bottom', y);
-        }
-
-        var hidden = false;
-        var prev, next;
-        for (var i = 0; i < pixelCount; i++) {
-          var pixel = pixels[i];
-
-          if (i < pixelCount - 1) {
-            var next = pixels[i + 1];
-
-            if (next.x == pixel.x && next.y == pixel.y) {
-              pixel.hide();
-              continue;
-            }
-
-            if (i > 0 && (pixel.x == prev.x || pixel.y == prev.y) &&
-                (pixel.x == next.x || pixel.y == next.y) &&
-                next.x != prev.x && next.y != prev.y) {
-              pixel.hide();
-              continue;
-            }
-
-            pixel.show();
-            prev = pixel;
+          if (next.x == pixel.x && next.y == pixel.y) {
+            pixel.hide();
+            continue;
           }
+
+          if (i > 0 && (pixel.x == prev.x || pixel.y == prev.y) &&
+              (pixel.x == next.x || pixel.y == next.y) &&
+              next.x != prev.x && next.y != prev.y) {
+            pixel.hide();
+            continue;
+          }
+
+          pixel.show();
+          prev = pixel;
+        }
+      }
+    }
+
+    alignPixels();
+
+    kite.show();
+    flyer.show();
+
+    setInterval(function() {
+      if (Math.random() < 0.2) {
+        if (reeled) {
+          flyerOffsetX += 4;
+          flyerOffsetY -= 4;
+          reeled = false;
+        } else {
+          flyerOffsetX -= 4;
+          flyerOffsetY += 4;
+          reeled = true;
         }
       }
 
       alignPixels();
+    }, 300);
 
-      kite.show();
-      flyer.show();
+    setInterval(function() {
+      if (Math.random() > 0.5) {
+        kiteX += Math.random() > 0.5 ? 4 : -4;
+      } else {
+        kiteY += Math.random() > 0.5 ? 4 : -4;
+      }
 
-      setInterval(function() {
-        if (Math.random() < 0.2) {
-          if (reeled) {
-            flyerOffsetX += 4;
-            flyerOffsetY -= 4;
-            reeled = false;
-          } else {
-            flyerOffsetX -= 4;
-            flyerOffsetY += 4;
-            reeled = true;
-          }
-        }
-
-        alignPixels();
-      }, 300);
-
-      setInterval(function() {
-        if (Math.random() > 0.5) {
-          kiteX += Math.random() > 0.5 ? 4 : -4;
-        } else {
-          kiteY += Math.random() > 0.5 ? 4 : -4;
-        }
-
-        placeKite();
-        alignPixels();
-      }, 2000);
-    // });
+      placeKite();
+      alignPixels();
+    }, 2000);
   })();
 });
-
-
 
 // Logs
 console.log('Forms');
