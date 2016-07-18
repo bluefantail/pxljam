@@ -980,7 +980,7 @@ form{
 	position: absolute;
   	top: 0px;
   	left: 0px;
-  	opacity: 0.8;
+  	opacity: 0.95;
 }
 .star{
   background-color: white;
@@ -988,6 +988,27 @@ form{
   height: 1px;
   position: absolute;
   z-index: 1;
+}
+#fly{
+	height: calc(100% - 64px);
+}
+#kite{
+	background: image-url('kite.gif');
+	width: 52px;
+	height: 84px;
+	position: absolute;
+}
+#flyer{
+	background: image-url('flyer.png');
+	width: 60px;
+	height: 64px;
+	position: absolute;
+}
+.kite-line {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #272727;
 }
 
 // Errors
