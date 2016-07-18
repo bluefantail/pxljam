@@ -271,7 +271,7 @@ $(function() {
           const moveBy = Math.random() > 0.75 ? 1 : -2;
           cloud.css('left', cloud.position().left + moveBy + 'px');
           animate();
-        }, Math.random() * 2000 + 1000);
+        }, Math.random() * 1800 + 800);
       }
     });
   })();
@@ -298,15 +298,17 @@ $(function() {
       return pixel;
     }
 
-    $("#fly img").load(function() {
-      if (!loaded) {
-        return loaded = true;
-      }
+    
+
+    // $("#fly div").load(function() {
+    //   if (!loaded) {
+    //     return loaded = true;
+    //   }
 
       var width = sky.width() / 8 + Math.random() * 50 - 25;
-      width -= width % 4;
+          width -= width % 4;
       var height = sky.height() - kite.height() - Math.random() * 200 - 100;
-      height -= height % 4;
+          height -= height % 4;
 
       var flyerX = 50 + flyerOffsetX;
       var kiteX  = width + flyerX + kiteOffsetX;
@@ -402,7 +404,7 @@ $(function() {
         placeKite();
         alignPixels();
       }, 2000);
-    });
+    // });
   })();
 });
 
