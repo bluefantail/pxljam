@@ -5,7 +5,7 @@
 // Colours
 $primary-dark: #001010;
 $primary-dim: lighten($primary-dark, 14%);
-$primary-bright: #F6A200;
+$primary-bright: #FAE100;
 $grey: #9a9a9a;
 
 // Maximum site width
@@ -433,7 +433,7 @@ nav{
 			float: left;
 			clear: both;
 			a{
-				color: darken($primary-bright, 10%);
+				color: darken($primary-bright, 12%);
 				font-size: 1.1rem;
 				padding: 0.5rem 1rem 0.5rem 1rem;
 				margin: 0 0 1rem 0;
@@ -443,7 +443,7 @@ nav{
 			a.active,
 			a:hover{
 				background: $primary-dark;
-				color: lighten($primary-bright, 30%);
+				color: lighten($primary-bright, 15%);
 			}
 		}
 	}
@@ -981,6 +981,10 @@ form{
   	top: 0px;
   	left: 0px;
   	opacity: 0.95;
+}
+#stars{
+	height: 60%;
+	overflow: hidden;
 }
 .star{
   background-color: white;
