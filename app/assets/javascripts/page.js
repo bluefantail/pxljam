@@ -225,8 +225,9 @@ $(function() {
   }
 
   (function() {
-    const space  = $('#home');
-    const cont   = $("#stars");
+    const space  = $('#stars');
+
+    console.log('Doing Stars');
 
     const square = 20;
     const gap    = 40;
@@ -235,15 +236,13 @@ $(function() {
     const width  = space.outerWidth() - square;
     const height = space.outerHeight() - square;
 
-    cont.height(space.outerHeight());
-
-    grid(width, height, square, gap, gap, chance, cont, function() {
+    grid(width, height, square, gap, gap, chance, space, function() {
       return $('<div class="star"></div>');
     });
-  });
+  })();
 
   (function() {
-    const sky    = $("#clouds"); // #upper-sky
+    const sky    = $("#clouds");
 
     const square = 10;
     const xGap   = 220;
