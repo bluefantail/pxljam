@@ -291,9 +291,9 @@ $(function() {
       return pixel;
     }
 
-    var width = sky.width() / 8 + Math.random() * 50 - 25;
+    var width = sky.width() / 10 + Math.random() * 50 - 25;
         width -= width % 4;
-    var height = sky.height() - kite.height() - Math.random() * 200 - 100;
+    var height = (sky.height() * 0.55) - kite.height() - Math.random() * 100;
         height -= height % 4;
 
     var flyerX = 50 + flyerOffsetX;
