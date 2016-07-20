@@ -56,6 +56,13 @@ $nav-gap: 5%;
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'pixel';
+  src: asset-url('pixel.woff') format('woff');
+  // src: asset-url('pixel.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 // Defaults
 html,body{
@@ -70,29 +77,11 @@ textarea{
 	font-family: 'Roboto', sans-serif;
 }
 h1{
-	font-family: 'PT Serif', serif;
-	font-family: 'Ceviche One', cursive;
+	font-family: 'pixel', sans-serif;
 	color: $primary-bright;
 	font-weight: 400;
 	font-size: 5rem;
-	letter-spacing: 0.1rem;
 	margin: 1.8rem 0 1.8rem 0;
-	&.a{
-	    font-family: 'Bungee Shade', cursive;
-	}
-	&.b{
-	    font-family: 'Quantico', sans-serif;
-	}
-	&.c{
-	    font-family: 'Press Start 2P', cursive;
-	    font-size: 300%;
-	}
-	&.d{
-	    font-family: 'Geo', sans-serif;
-	}
-	&.e{
-	    font-family: 'Codystar', cursive;
-	}
 }
 p{
 	text-align: justify;
