@@ -66,8 +66,8 @@ function handle_entry(event) {
     var idx = section.getAttribute("data-player-n");
     var player = {
       email:       section.querySelector("[name='email']").value,
-      player_name: section.querySelector("[name='name']").value
-      // vec:         section.querySelector("[name='vec']").checked
+      player_name: section.querySelector("[name='name']").value,
+      shirt_size:  section.querySelector("[name$='shirt-size']").checked
     };
     data.players.push(player);
   }
