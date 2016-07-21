@@ -204,8 +204,17 @@ gumshoe.init({
   offset: 3 // Integer. How far to offset the scrolling anchor location in pixels
 });
 
+// Update smoothScroll distances
+var scrolling = false;
 function calculateScroll(){
-  gumshoe.setDistances();
+  if (!scrolling) {
+    scrolling = true;
+    gumshoe.setDistances();
+  }
+  clearTimeout(this.timer);
+  this.timer = setTimeout(function(){
+    scrolling = false;
+  }, 1000);
 }
 window.addEventListener("scroll", calculateScroll);
 
