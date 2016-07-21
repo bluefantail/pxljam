@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require smooth-scroll.min
 //= require gumshoe.min
+//= require artwork
 //= require_tree .
