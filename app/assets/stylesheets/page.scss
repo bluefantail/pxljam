@@ -82,7 +82,7 @@ h1{
 	font-weight: 400;
 	font-size: 5rem;
 	margin: 1.8rem 0 1.8rem 0;
-	line-height: 150%;
+	line-height: 160%;
 }
 p{
 	text-align: justify;
@@ -803,28 +803,22 @@ form{
 			}
 			label{
 				display: block;
-				font-family: icons;
 				padding: $input-spacing;
 				font-size: $input-font-size;
 				float: left;
-				border: 1px solid #eee;
 				background: #eee;
 				color: #ddd;
-				margin-right: $input-spacing;
-				margin-bottom: $input-spacing;
 			}
+			input[type=radio]:checked + label,
 			input[type=checkbox]:checked + label{
 				color: #fff;
 				background: $primary-bright;
-				border: 1px solid $primary-bright;
 			}
 			label:hover{ // These last two are duplicated to avoid js ignoring both on touch devices
 				color: #fff;
 				background: $primary-bright;
-				border: 1px solid $primary-bright;
 			}
-			.food-title,
-			.VEC-title{
+			.shirt-size-title{
 				padding: $input-spacing $input-spacing*1.5 $input-spacing $input-spacing*1.5;
 				margin-bottom: $input-spacing;
 				font-size: $input-font-size;
@@ -839,6 +833,7 @@ form{
 					width: 100%;
 				}
 			}
+
 		}
 	}
 	#team-message{

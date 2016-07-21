@@ -66,8 +66,8 @@ function handle_entry(event) {
     var idx = section.getAttribute("data-player-n");
     var player = {
       email:       section.querySelector("[name='email']").value,
-      player_name: section.querySelector("[name='name']").value,
-      vec:         section.querySelector("[name='vec']").checked
+      player_name: section.querySelector("[name='name']").value
+      // vec:         section.querySelector("[name='vec']").checked
     };
     data.players.push(player);
   }
@@ -125,8 +125,20 @@ function insert_player_feilds(playerCount){
         emailEl = newEl.querySelector('[name="email"]');
         emailEl.setAttribute ('required', 'true');
 
-        newEl.querySelector('[name="vec"]').id = 'player-' + i + '-vec';
-        newEl.querySelector('[for="vec"]').setAttribute('for', 'player-' + i + '-vec');
+        var shirtSizes = {
+          input:  newEl.querySelectorAll('[name="shirt-size"]'),
+          label:  newEl.querySelectorAll('label')
+        }
+
+        Array.prototype.forEach.call(shirtSizes.input, function(input) {
+          var size = input.id;
+          input.name = 'player-' + i + '-shirt-size';
+          input.id = 'player-' + i + '-' + size;
+        });
+        Array.prototype.forEach.call(shirtSizes.label, function(label) {
+          var size = label.id;
+          label.setAttribute('for', 'player-' + i + '-' + size);
+        });
       
       document.getElementById("player-fields").appendChild(newEl);
     } else if(el) {
