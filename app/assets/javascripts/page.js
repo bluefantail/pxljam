@@ -193,6 +193,7 @@ if ('createTouch' in document) {
   } catch (e) {}
 }
 
+
 // Initialise Smooth Scroll and Gumshoe for Navigation
 smoothScroll.init({
   speed: 560, // Integer. How fast to complete the scroll in milliseconds
@@ -202,6 +203,11 @@ smoothScroll.init({
 gumshoe.init({
   offset: 3 // Integer. How far to offset the scrolling anchor location in pixels
 });
+
+function calculateScroll(){
+  gumshoe.setDistances();
+}
+window.addEventListener("scroll", calculateScroll);
 
 // Logs
 console.log('Forms');
