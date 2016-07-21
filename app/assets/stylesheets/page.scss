@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Colours
-$primary-dark: #001010;
+$primary-dark: #0E0900;
 $primary-dim: lighten($primary-dark, 14%);
 $primary-bright: #FAE100;
 $grey: #9a9a9a;
@@ -83,6 +83,7 @@ h1{
 	font-size: 5rem;
 	margin: 1.8rem 0 1.8rem 0;
 	line-height: 160%;
+	text-shadow: 0px 5px 0px lighten($primary-dark, 45%);
 }
 p{
 	text-align: justify;
@@ -128,13 +129,14 @@ button,
 input[type=submit]{
 	font-size: 1.4rem;
 	background: $primary-bright;
-	color: lighten($primary-bright, 40%);
-	box-shadow: 0px 2px 8px #000;
+	color: $primary-dark;
+	box-shadow: 0px 1px 8px #001270;
 	padding: 1.3rem 2.6rem 1.3rem 2.6rem;
+	text-shadow: none;
 	@include animate;
 	&:hover{
 		background: lighten($primary-bright, 20%);
-		color: #fff;
+		color: lighten($primary-dark, 20%);
 	}
 }
 @media(max-width: 1000px){
@@ -150,6 +152,8 @@ input[type=submit]{
 	}
 	h1{
 		font-size: 4rem;
+		text-shadow: 0px 3px 0px #FF9C00;
+
 	}
 	p.feature{
 		font-size: 1.5rem;

@@ -82,7 +82,6 @@ function handle_contact(event){
   event.preventDefault();
 
   $.ajax({
-      // url: "//formspree.io/mattfannin@acidic.co.nz",
       url: "//formspree.io/joshua.scott.132@gmail.com",
       method: "POST",
       data: $('#contact-form').serialize(),
