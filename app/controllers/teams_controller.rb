@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
           team.players.create!({
             email: player[:email],
             name: player[:player_name],
-            vec: player[:vec]
+            shirt_size: player[:shirt_size]
           })
         end
       end
