@@ -15,8 +15,10 @@ cd pxljam
 Install dependencies using bundler:
 
 ```
-$ bundle install
+$ bundle install --without production
 ```
+
+`--without production` will skip Postgres, if you need this, omit the option.
 
 Rails, and all the project dependencies will now be installed.
 
