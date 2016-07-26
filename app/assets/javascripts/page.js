@@ -67,7 +67,7 @@ function handle_entry(event) {
     var player = {
       email:       section.querySelector("[name='email']").value,
       player_name: section.querySelector("[name='name']").value,
-      shirt_size:  section.querySelector("[name$='shirt-size']").checked
+      shirt_size:  section.querySelector("[name$='shirt-size']:checked").value
     };
     data.players.push(player);
   }
