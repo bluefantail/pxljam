@@ -13,7 +13,7 @@ require 'mina/git'
 set :domain, 'sodalite.acidic.co.nz'
 set :deploy_to, '/apps/pxljam-beta'
 set :repository, 'git@github.com:bluefantail/pxljam.git'
-set :branch, 'rails'
+set :branch, 'master'
 
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
