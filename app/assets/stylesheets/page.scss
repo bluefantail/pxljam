@@ -934,11 +934,22 @@ form{
 		font-size: 115%;
 		font-weight: 100;
 		margin: 0 1rem 1rem 0;
+			padding: 1rem 3rem 1rem 3rem;
 		@include animate;
 		.team-name{
 			float: left;
-			padding: 1rem 3rem 1rem 3rem;
 			text-align: center;
+		}
+		.player-count{
+			@extend .team-name;
+			margin-left: 1rem;
+			border-radius: 50%;
+			width: 17px;
+			height: 17px;
+			padding: 0.2rem;
+			font-size: 80%;
+			color: #111;
+			background: #fff;
 		}
 		&:hover{
 			background-color: lighten($primary-dark, 15%);
