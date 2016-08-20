@@ -169,26 +169,16 @@ input[type=submit]{
 // Site
 header{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00021e+17,001270+40,002199+52,14bcff+100 */
-	background: #00021e; /* Old browsers */
-	background: -moz-linear-gradient(top,  #00021e 17%, #001270 40%, #002199 52%, #14bcff 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  #00021e 17%,#001270 40%,#002199 52%,#14bcff 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  #00021e 17%,#001270 40%,#002199 52%,#14bcff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: asset-url("ground.png") repeat-x bottom, #00021e; /* Old browsers */
+	background: asset-url("ground.png") repeat-x bottom, -moz-linear-gradient(top,  #00021e 17%, #001270 40%, #002199 52%, #14bcff 100%); /* FF3.6-15 */
+	background: asset-url("ground.png") repeat-x bottom, -webkit-linear-gradient(top,  #00021e 17%,#001270 40%,#002199 52%,#14bcff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: asset-url("ground.png") repeat-x bottom, linear-gradient(to bottom,  #00021e 17%,#001270 40%,#002199 52%,#14bcff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00021e', endColorstr='#14bcff',GradientType=0 ); /* IE6-9 */
 	box-sizing: border-box;
 	position: absolute;
 	height: 100%;
 	width: 100%;
 	color: #fff;
-	overflow-x: hidden;
-	&:before{
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: asset-url("ground.png") repeat-x bottom;
-	}
 }
 .container{
 	box-sizing: border-box;
@@ -270,7 +260,7 @@ header{
 				p{
 					text-align: inherit;
 					margin: 1rem 0 1rem 0;
-					font-size: 1.8rem;
+					font-size: 1.5rem;
 					font-weight: 400;
 					width: 100%;
 					@include animate;
