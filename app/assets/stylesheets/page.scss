@@ -3,9 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Colours
-$primary-dark: #0E0900;
+$primary-dark: #000A0C;
 $primary-dim: lighten($primary-dark, 14%);
 $primary-bright: #FAE100;
+$primary-bright-shadow: #0E0900;
 $grey: #9a9a9a;
 
 // Maximum site width
@@ -83,7 +84,7 @@ h1{
 	font-size: 5rem;
 	margin: 1.8rem 0 1.8rem 0;
 	line-height: 160%;
-	text-shadow: 0px 5px 0px lighten($primary-dark, 45%);
+	text-shadow: 0px 5px 0px lighten($primary-bright-shadow, 45%);
 }
 p{
 	text-align: justify;
@@ -105,9 +106,11 @@ a{
 	text-decoration: none;
 	outline: none;
 	@include animate;
-		color: lighten($primary-bright, 20%);
+		color: lighten($primary-dark, 55%);
+		border-bottom: 2px solid transparent;
 	&:hover{
-		color: lighten($primary-bright, 35%);
+		color: lighten($primary-dark, 65%);
+		border-bottom: 2px solid lighten($primary-dark, 55%);
 	}
 }
 input,
@@ -416,17 +419,22 @@ nav{
 			float: left;
 			clear: both;
 			a{
-				color: darken($primary-bright, 12%);
-				font-size: 1.1rem;
-				padding: 0.5rem 1rem 0.5rem 1rem;
+				color: lighten($primary-dark, 43%);
+				font-size: 12pt;
+				padding: 0.8rem;
 				margin: 0 0 1rem 0;
 				float: left;
+				font-family: 'pixel';
+				border: none;
+				box-shadow: 0 4px 0 transparent;
 				@include animate;
 			}
 			a.active,
 			a:hover{
-				background: $primary-dark;
-				color: lighten($primary-bright, 15%);
+				color: #fff;
+				border: none;
+				box-shadow: 0 4px 0 lighten($primary-dark, 20%);
+				background: lighten($primary-dark, 45%);
 			}
 		}
 	}
@@ -544,11 +552,11 @@ section#faq{
 		font-size: 1rem;
 		left: 0;
 		padding: 0 0.6rem 0 0.6rem;
-		background: darken($primary-bright, 5%);
+		background: lighten($primary-dark, 42%);
 		border-radius: 1px;
 	}
 	p:nth-child(odd) {
-		color: $primary-bright;
+		color: lighten($primary-dark, 50%);
 		font-weight: 400;
 		&:before{
 			content: "Q";
@@ -579,6 +587,7 @@ section#contact{
 	textarea,{
 		background: $primary-dark;
 		color: $primary-dim;
+		&:hover,
 		&:focus{
 			background: lighten($primary-dark, 10%);
 			color: #fff;
