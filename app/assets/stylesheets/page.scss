@@ -946,6 +946,7 @@ form{
 				display: table-cell;
 				vertical-align: middle;
 				padding-right: 1rem;
+				cursor: default;
 			}
 			.player-count{
 				@extend .team-name;
