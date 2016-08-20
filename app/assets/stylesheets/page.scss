@@ -663,6 +663,7 @@ section#sponsors{
 
 	a{
 		opacity: 0.7;
+		border: none;
 		@include animate;
 		&:hover{
 			opacity: 1;
