@@ -561,7 +561,7 @@ section#where{
 		}
 }
 section#contact{
-	background: #000;
+	background: image-url("obs.png") #000;
 	$placeholder-blue: lighten($primary-dim, 15%);
 	color: lighten($primary-dim, 15%);
 	input:not([type="submit"]),
