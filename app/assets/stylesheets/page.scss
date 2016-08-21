@@ -590,11 +590,11 @@ section#contact{
 	color: lighten($primary-dim, 15%);
 	input:not([type="submit"]),
 	textarea,{
-		background: $primary-dark;
+		background: lighten($primary-dark, 6%);
 		color: $primary-dim;
 		&:hover,
 		&:focus{
-			background: lighten($primary-dark, 10%);
+			background: lighten($primary-dark, 22%);
 			color: #fff;
 		}
 	}
