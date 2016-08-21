@@ -842,7 +842,6 @@ form{
 					width: 100%;
 				}
 			}
-
 		}
 	}
 	#team-message{
@@ -862,28 +861,14 @@ form{
 				input{
 					width: 28%;
 				}
-				.food-title,
-				.VEC-title{
-					padding-left: $input-spacing*1.1;
-					padding-right: $input-spacing*1.1;
-				}
 			}
 		}
 	}
-	@media(max-width: 1000px){
+	@media(max-width: 1100px){
 		#player-fields{
 			.player-info{
 				input{
 					width: 45%;
-				}
-				.food-title{
-					clear: left;
-				}
-				.food-title,
-				.VEC-title{
-					padding-left: $input-spacing*2;
-					padding-right: $input-spacing*2;
-					margin-bototm: $input-spacing;
 				}
 			}
 		}
@@ -895,13 +880,8 @@ form{
 					width: 100%;
 					margin-right: 0;
 				}
+				.shirt-size-title,
 				label{
-					font-size: $input-font-size*0.8;
-				}
-				.food-title,
-				.VEC-title{
-					padding-left: $input-spacing*1;
-					padding-right: $input-spacing*1;
 					font-size: $input-font-size*0.8;
 				}
 			}
@@ -914,9 +894,6 @@ form{
 				}
 				label{
 					margin-right: 0;
-				}
-				.food-title,
-				.VEC-title{
 				}
 			}
 		}
