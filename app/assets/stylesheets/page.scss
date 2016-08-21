@@ -271,6 +271,11 @@ header{
 				a{
 					margin-top: 2rem;
 					display: inline-block;
+					border-bottom: 4px solid lighten($primary-bright-shadow, 40%);
+					color: lighten($primary-bright-shadow, 10%);
+					box-shadow: 0 3px 9px #333;
+					font-family: 'pixel';
+					font-size: 22px;
 				}
 			}
 		}
