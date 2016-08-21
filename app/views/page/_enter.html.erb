@@ -1,13 +1,17 @@
 <% if @contest_running %>
 <h1>Hold fire!</h1>
-<p>Sign-ups are closed at the moment, check back again closer to the next competition.</p>
+<p>
+  Sign-ups are closed at the moment, check back again closer to the next competition.
+</p>
 <% else %>
 <h1 class="a">Enter a team</h1>
 <p>Signups are open. $30 per team member.</p>
 <p>
-  
+  Due to the huge number of recent signups, we may not be able to provide shirts *on the competition day* for those who sign up after the 21st of August. We know how much Pxljam contestants love their tshirts, so don't worry! We'll order extras as signups roll in, and you can pick them up when they've been printed.
 </p>
-<p>Please ensure you provide a correct email address for each member as we may send you resources needed for voting during the competition.</p>
+<p>
+  Please ensure you provide a correct email address for each member as we may send you resources needed for voting during the competition.
+</p>
 <%= form_tag teams_url, id: "entry-form", method: :post do |f| %>
 <%= text_field_tag :name, nil, placeholder: "Team name", id: "team-name", required: true %>
 <div id="name-error" class="error">That team name is taken sorry!</div>
