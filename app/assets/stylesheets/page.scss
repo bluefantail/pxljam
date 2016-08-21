@@ -469,7 +469,7 @@ section{
 }
 @media(max-width: 1000px){
 	section{
-		padding: 1rem 0 2rem 0;
+		padding: 0 0 7rem 0;
 	}
 }
 section#about{
@@ -507,21 +507,7 @@ section#about{
 		}
 	}
 }
-@media(max-width: 1000px){
-	section#about{
-		background-size: 400%;
-	}
-}
-@media(max-width: 750px){
-	section#about{
-		background-size: 500%;
-	}
-}
-@media(max-width: 600px){
-	section#about{
-		background-size: 1200%;
-	}
-}
+
 section#enter{
 	background: image-url("deep.png") repeat-x bottom #fff;
 	#entry-confirmation{
@@ -558,6 +544,7 @@ section#faq{
 		left: 0;
 		padding: 0 0.6rem 0 0.6rem;
 		background: lighten($primary-dark, 42%);
+		border-bottom: 3px solid lighten($primary-dark, 22%);
 		border-radius: 1px;
 	}
 	p:nth-child(odd) {
@@ -917,6 +904,7 @@ form{
 		font-weight: 100;
 		margin: 0 1rem 1rem 0;
 		padding: 1rem 3rem 1rem 3rem;
+		border-bottom: 3px solid $primary-dark;
 		@include animate;
 		&>div{
 			width: 100%;
