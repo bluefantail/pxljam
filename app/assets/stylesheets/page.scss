@@ -262,8 +262,8 @@ header{
 				@include animate;
 				p{
 					text-align: inherit;
-					margin: 1rem 0 1rem 0;
-					font-size: 1.5rem;
+					margin: 0.4rem 0 0.4rem 0;
+					font-size: 1.4rem;
 					font-weight: 400;
 					width: 100%;
 					@include animate;
@@ -353,7 +353,8 @@ $signup-status-width: 800px;
 				}
 				#splash-info{
 					p{
-						font-size: 1.7rem;
+						margin: 0.2rem 0 0.2rem 0;
+						font-size: 1.3rem;
 					}
 				}
 			}
@@ -367,11 +368,6 @@ $signup-status-width: 800px;
 				#splash-title{
 					font-size: 10rem
 				}
-				#splash-info{
-					p{
-						font-size: 1.6rem;
-					}
-				}
 			}
 		}
 	}
@@ -384,23 +380,16 @@ $signup-status-width: 800px;
 				text-align: center;
 				#splash-info{
 					padding: 0;
-					p{
-						font-size: 1.5rem;
-					}
 				}
 			}
 		}
 	}
 	#logo{
-		padding-bottom: 45%;
+		padding-bottom: 25%;
 		margin-bottom: 2rem;
 	}
 }
-@media(max-width: 500px){
-	#logo{
-		padding-bottom: 65%;
-	}
-}
+
 @media(max-width: 350px){
 	#splash-title{
 		font-size: 8rem !important;
@@ -446,7 +435,7 @@ nav{
 }
 @media(max-width: 1200px){
 	nav{
-		margin-left: -150px;
+		margin-left: -200px;
 	}
 }
 
@@ -725,11 +714,13 @@ form{
 		clear: both;
 		width: auto;
 		font-weight: 400;
+		border-bottom: 4px solid lighten($primary-bright-shadow, 50%);
 	}
 	input:disabled,
 	input:disabled:hover{
 		background: $grey;
 		color: lighten($grey, 15%);
+		border-color: darken($grey, 5%);
 		cursor: normal;
 	}
 	input[type=radio]{
