@@ -164,26 +164,9 @@ $(function() {
       }
     }
 
-    alignPixels();
-
     kite.show();
     flyer.show();
-
-    setInterval(function() {
-      if (Math.random() < 0.2) {
-        if (reeled) {
-          flyerOffsetX += 4;
-          flyerOffsetY -= 4;
-          reeled = false;
-        } else {
-          flyerOffsetX -= 4;
-          flyerOffsetY += 4;
-          reeled = true;
-        }
-      }
-
-      alignPixels();
-    }, 300);
+    alignPixels();
 
     setInterval(function() {
       if (Math.random() > 0.5) {
@@ -191,7 +174,6 @@ $(function() {
       } else {
         kiteY += Math.random() > 0.5 ? 4 : -4;
       }
-
       placeKite();
       alignPixels();
     }, 2000);
