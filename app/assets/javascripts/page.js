@@ -173,7 +173,8 @@ Array.prototype.forEach.call(playerElements, function(element) {
   element.addEventListener("click", handle_click);
 });
 
-document.querySelector('#entry-form').addEventListener('submit', handle_entry);
+var isForm = document.querySelector('#entry-form');
+isForm ? isForm.addEventListener('submit', handle_entry) : false
 document.querySelector('#contact-form').addEventListener('submit', handle_contact);
 // END LISTENERS
 
