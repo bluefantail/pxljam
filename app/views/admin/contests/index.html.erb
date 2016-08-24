@@ -1,6 +1,9 @@
-<h1>Contests</h1>
+<h2>Contests</h2>
 
-<%= link_to "Start timer", new_admin_contest_path %>
+<div id="start-buttons">
+  <%= link_to "Start", new_admin_contest_path %>
+  <%= link_to "Start Late", new_admin_contest_path(:start_late => true) %>
+</div>
 
 <table>
   <tr>

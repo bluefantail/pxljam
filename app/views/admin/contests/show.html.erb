@@ -1,4 +1,21 @@
-<div class="timer" data-created-at="<%= @contest.created_at.to_i %>">
-  <div id="started-at"><%= @contest.created_at %></div>
-  <div id="countdown"></div>
-</div>
+<header id="home">
+  <div id="stars" class="art-container"></div>
+   <div id='clouds' class='art-container'></div>
+   <div id='fly' class='art-container'>
+      <div id='kite'></div>
+      <div id='line'></div>
+      <div id='flyer'></div>
+    </div>
+  <div class="container table">
+    <div id="splash-container" class="vert-align">
+      <div id="splash" class="row">
+        <div id="splash-text" class="twelve columns">
+			<div class="timer" data-created-at="<%= @contest.created_at.to_i %>">
+			  <div id="started-at"><%= @contest.created_at %></div>
+			  <h1 id="countdown"></h1>
+			</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
