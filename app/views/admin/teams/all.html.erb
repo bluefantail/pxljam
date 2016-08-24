@@ -5,13 +5,15 @@
     <th>Name</th>
     <th>Email</th>
     <th>Team</th>
+    <th>Shirt size</th>
   </tr>
 
-  <% @players.each do |player| %>
+  <% @players.sort { |a, b| a.team.name <=> b.team.name }.each do |player| %>
     <tr>
       <td><%= player.name %></td>
       <td><%= player.email %></td>
       <td><%= player.team.try! :name %></td>
+      <td><%= player.shirt_size %></td>
     </tr>
   <% end %>
 </table>
