@@ -7,8 +7,8 @@ if(document.querySelector(".timer") != null) {
 
     var rem = ends_at - (new Date());
 
-    let hours = rem / (60 * 60 * 1000);
-    let minutes = (hours - Math.floor(hours)) * 60;
+    var hours = rem / (60 * 60 * 1000);
+    var minutes = (hours - Math.floor(hours)) * 60;
     var seconds = (minutes - Math.floor(minutes)) * 60;
     
     document.querySelector("#countdown").innerText = Math.floor(hours) + ":" + Math.floor(minutes) + ":" + Math.floor(seconds);
