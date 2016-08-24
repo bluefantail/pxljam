@@ -1,5 +1,4 @@
 class Admin::ContestsController < ApplicationController
-  before_action :authenticate_admin!
   layout :choose_layout
   
   def index
