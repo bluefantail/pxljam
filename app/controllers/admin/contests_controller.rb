@@ -12,11 +12,11 @@ class Admin::ContestsController < ApplicationController
   def new
     if(params[:start_late])
       contest = Contest.create
-      contest.created_at = Time.now
+      contest.created_at = DateTime.now
       contest.save
     else
       contest = Contest.create
-      contest.created_at = Time.zone.local(2016,8,26,18,0)
+      contest.created_at = DateTime.new(2016, 8, 26, 18, 0, 0, "+12").in_time_zone("UTC")
       contest.save
     end
     redirect_to admin_contests_path
