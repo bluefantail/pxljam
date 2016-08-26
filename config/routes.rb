@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   resources :teams, only: [:create]
   resources :page, only: [:index]
+  resources :timer
   
   namespace :admin do
     resources :home
