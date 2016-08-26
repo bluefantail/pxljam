@@ -11,6 +11,6 @@ if(document.querySelector(".timer") != null) {
     var minutes = (hours - Math.floor(hours)) * 60;
     var seconds = (minutes - Math.floor(minutes)) * 60;
     
-    document.querySelector("#countdown").innerText = Math.floor(hours) + ":" + Math.floor(minutes) + ":" + Math.floor(seconds);
+    document.querySelector("#countdown").innerText =  ("00" + Math.floor(hours)).substring(Math.floor(hours).toString().length) + ":" + ("00" + Math.floor(minutes)).substring(Math.floor(minutes).toString().length)+ ":" + ("00" + Math.floor(seconds)).substring(Math.floor(seconds).toString().length);
   }, 500);
 }
