@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :home
     resources :contests
+    resources :shirts do
+      get 'give' => 'shirts#give'
+      get 'ungive' => 'shirts#ungive'
+    end
     
     get 'teams/all' => 'teams#all'
     resources :teams do

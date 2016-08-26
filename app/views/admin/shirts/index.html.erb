@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>Player name</th>
+    <th>Team</th>
+    <th>Shirt size</th>
+    <th>Sign up date</th>
+    <th>Got shirt</th>
+    <th></th>
+  </tr>
+
+
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= player.name %></td>
+      <td><%= player.team.name %></td>
+      <td><%= player.shirt_size %></td>
+      <td><%= player.created_at %></td>
+      <td><%= player.got_shirt ? "Yes" : "No" %></td>
+      <td><%= player.got_shirt ? link_to("Ungive shirt", admin_shirt_ungive_path(player)) : link_to("Give shirt", admin_shirt_give_path(player)) %></td>
+    </tr>
+  <% end %>
+</table>

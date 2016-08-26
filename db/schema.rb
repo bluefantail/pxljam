@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726085932) do
+ActiveRecord::Schema.define(version: 20160826000420) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -38,12 +38,13 @@ ActiveRecord::Schema.define(version: 20160726085932) do
 
   create_table "players", force: :cascade do |t|
     t.text     "email",                      null: false
-    t.boolean  "vec",        default: false, null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "team_id"
+    t.boolean  "food",       default: true
     t.string   "name"
     t.string   "shirt_size"
+    t.boolean  "got_shirt",  default: false
   end
 
 # Could not dump table "teams" because of following NoMethodError
