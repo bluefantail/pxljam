@@ -47,7 +47,11 @@ ActiveRecord::Schema.define(version: 20160826000420) do
     t.boolean  "got_shirt",  default: false
   end
 
-# Could not dump table "teams" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "teams", force: :cascade do |t|
+    t.text     "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean  "verified"
+  end
 
 end
