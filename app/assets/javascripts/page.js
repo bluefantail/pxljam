@@ -82,7 +82,7 @@ function handle_contact(event){
   event.preventDefault();
 
   $.ajax({
-      url: "//formspree.io/joshua.scott.132@gmail.com",
+      url: "//formspree.io/xyjqeqom",
       method: "POST",
       data: $('#contact-form').serialize(),
       dataType: "json"
