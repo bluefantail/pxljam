@@ -82,7 +82,7 @@ function handle_contact(event){
   event.preventDefault();
 
   $.ajax({
-      url: "//formspree.io/xyjqeqom",
+      url: "//formspree.io/xkbljdnm",
       method: "POST",
       data: $('#contact-form').serialize(),
       dataType: "json"
