@@ -19,3 +19,8 @@ public/assets/*
 !public/assets/.sprockets-manifest*.json
 
 .vscode
+extensions/
+gems/
+json-1.8.3.gem
+vendor/
+
