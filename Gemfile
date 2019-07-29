@@ -41,3 +41,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'highline'
 gem 'slackistrano'
 gem 'devise'
+
+gem "responders", "~> 2.4.1"
