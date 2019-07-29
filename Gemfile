@@ -43,3 +43,4 @@ gem 'slackistrano'
 gem 'devise'
 
 gem "responders", "~> 2.4.1"
+gem "dotenv"
