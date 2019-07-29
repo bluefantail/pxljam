@@ -15,8 +15,6 @@ set :deploy_to, '/apps/pxljam-beta'
 set :repository, 'git@github.com:bluefantail/pxljam.git'
 set :branch, 'master'
 
-set :bundle_prefix, 'env $(cat /apps/pxljam-beta/shared/config/app.env | xargs) bundle exec'
-
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
 
